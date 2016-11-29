@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#9f3032</color>
+    <color name="colorPrimaryDark">#9f3032</color>
+    <color name="colorAccent">#9f3032</color>
+    <color name="blanco">#fff</color><!-- Color de los textos en los los fragments y en los asyn dialog -->
+    <color name="background_material_light">#505355</color><!-- Color del fondo del navbar -->
+    <color name="foreground_material_light">#deffffff</color>
+    <color name="black">#505355</color>
+    <color name="primary_text_default_material_light">#deffffff</color><!-- Color editText-->
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+    <color name="white">#ffffff</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+</resources>

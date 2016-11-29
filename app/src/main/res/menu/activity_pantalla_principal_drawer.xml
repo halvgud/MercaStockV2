@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Opciones">
+        <!--android:visible="false"-->
+        <menu>
+
+
+            <item
+                android:id="@+id/ConfigurarServidor"
+                android:title="Configurar Servidor"
+                />
+            <item
+                android:id="@+id/cerrarsesion"
+
+                android:title="Cerrar Sesión"
+                />
+
+        </menu>
+    </item>
+
+</menu>
