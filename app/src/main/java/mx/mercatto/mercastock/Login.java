@@ -31,6 +31,7 @@ public class Login extends Fragment implements View.OnClickListener {
         txSucursal=(TextView) rootView.findViewById(R.id.textView13);
         txtUsuario = (EditText) rootView.findViewById(R.id.InputUsuario);
         txtPassword = (EditText) rootView.findViewById(R.id.txtPassword);
+        Constante.ConfigurarUsuario("");
         txtUsuario.addTextChangedListener(new TextWatcher() {
             String value1 = "";
             String value2 = "";
@@ -44,7 +45,6 @@ public class Login extends Fragment implements View.OnClickListener {
                     if(getView()!=null) {
                         getView().findViewById(R.id.button2).setEnabled(true);
                     }
-
                 } else {
                     if(getView()!=null) {
                         getView().findViewById(R.id.button2).setEnabled(false);

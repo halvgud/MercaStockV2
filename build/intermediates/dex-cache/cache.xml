@@ -1,3 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_17f88c238a467fe79fa6bea116cebf21925fb0e8\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3ac69652601fab7491481de9d949035aa9999b3d">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_caaa457debcb49d3a24b37dd16297f910186e7a4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ryu\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.1_7991f6dc49db7726d6296abe369b3dfe12ef2f41\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-8.4.0_d529e2835da3ac75ac1dad804b44eec8d9b7fb98\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.1_7bb77bb7998c78445d170481bc8490db8ce70e8a\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.1_7c6580ebce93550a226431cdfc086520df9e4db4\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-8.4.0_998a03b50c11e8256fc453b2b8257080aa9560a6\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-8.4.0_0c09873de34438cb7b79aef900e73b912a55d018\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-8.4.0_287ef329e75bc36cb8a3ac9a81b614f24f3f46df\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-8.4.0_2812ffa9b5059f39c5ce2cbb604c1e235c8dffe2\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.2.1_e6d6cba137405158e11fff75d921f3e80adf7179\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.1_23757ed8318c594fdb4441dff56aa2289202cd4a\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-8.4.0_0b5ea0a1f01dac9e97c2433cb7e659652b799496\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-8.4.0_fe3c9dd18c303a114b2319f13ab71c660609564c\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-8.4.0_e19fb638a2d8be08ea3fde1b6f6817f3144f8b77\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_994b99f9ab7043f53128137cc08967a119e21241\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-8.4.0_23f8f924c7baf6ad0c15d0e6ac38776034085e00\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.1_8ce7dae5a1b29577530e2de498df667e9eacfe2f\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-8.4.0_da24806b94f7fdb4b5c060dc7d1af1941830c74a\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-measurement-8.4.0_c631bef0add5cc712706b2efb96baabe5e0195f5\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-8.4.0_757e0011866beb824d1e2b4fc1f5c98d26ae254e\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_040261b11fcad3849f9e6519d4d56ff66bd9b1b8\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.1_f736d245dd0c8ad44ff66599ff76606b8991f3cb\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2675637b6627c75d0948dc3df84e1c4820906eb">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_272d885b9c45aa656830b796f738d29a2a5b821e\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.2.1_1fc7bf66cb6b7429fc14f42c18b7c8bc291a33a5\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-8.4.0_4ce622f5bee6959d47cfcf1142ce2af3ce547bdb\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-23.0.0_364bc638916885ab22686beb8d7739aa777a1347\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-8.4.0_757c3b047eb68ec55ca45d531d3f5c0e9b8eb9c4\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-8.4.0_5ddf6f77c564ceaa1069a250c4f48ad523a12102\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-8.4.0_94b33eefa605d73364a5ab9637dfe76a30f656b1\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-8.4.0_5985a668f0d95848a24098f5cdf12c091f922014\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-8.4.0_1619608e264ff991cddb857af321d34066d3da91\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-8.4.0_c60d242ad5ba4d521a389c05bacceaa500039701\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_d419bc9441c304957320475e19367606f5dd5455\classes.dex" />
+    </item>
+    <item
+        jar="C:\GIT\MercaStock2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="C:\GIT\MercaStock2\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-8.4.0_334b700460d155e4f3e118d232be5ad0f8407516\classes.dex" />
+    </item>
+
+</items>

@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,11 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class PantallaPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String PROJECT_NUMBER="917548048883";
-
+    public static boolean isChecked = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,20 @@ public class PantallaPrincipal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Menu menu = navigationView.getMenu();
+        MenuItem menuItem = menu.findItem(R.id.busquedaGeneral);
+        final View actionView = MenuItemCompat.getActionView(menuItem);
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(actionView.isActivated());
+            }
+
+        });
+        /*
+        *
+        *
+        * */
         Constante constante = new Constante(this);
         GCMClientManager pushClientManager = new GCMClientManager(this, PROJECT_NUMBER);
         pushClientManager.registerIfNeeded(new GCMClientManager.RegistrationCompletedHandler() {
@@ -62,7 +79,11 @@ public class PantallaPrincipal extends AppCompatActivity
         }
         fragmentTransaction.commit();
     }
-
+    public void eventoClick(View v){
+        isChecked = !isChecked;
+        ListaGeneral.backButtonWasPressed(this);
+        ListaGeneral.CAT_ID="";
+    }
 
     @Override
     public void onBackPressed() {
@@ -77,7 +98,8 @@ public class PantallaPrincipal extends AppCompatActivity
                     break;
                 case ARTICULO:
                     Bundle args = new Bundle();
-                    args.putBoolean(Constante.argumentoArticulo(),true);
+                    //args.putBoolean(Constante.argumentoArticulo(),true);
+                    args.putInt("TRANSACCION_GENERAL",Constante.ARTICULO);
                     ListaGeneral fragment = new ListaGeneral();
                     fragment.setArguments(args);
                     FragmentManager fragmentManager = getFragmentManager();
@@ -85,7 +107,8 @@ public class PantallaPrincipal extends AppCompatActivity
                     break;
                 case LISTA_ARTICULO:
                     Bundle args2 = new Bundle();
-                    args2.putBoolean(Constante.argumentoArticulo(),false);
+                    //args2.putBoolean(Constante.argumentoArticulo(),false);
+                    args2.putInt("TRANSACCION_GENERAL",Constante.CATEGORIA);
                     ListaGeneral fragment2 = new ListaGeneral();
                     fragment2.setArguments(args2);
                     FragmentManager fragmentManager2 = getFragmentManager();
@@ -102,6 +125,7 @@ public class PantallaPrincipal extends AppCompatActivity
     static final int ARTICULO=2;
     static final int LISTA_ARTICULO=3;
     static final int CONFIGURACION=4;
+    static final int LISTA_GENERAL=5;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.pantalla_principal, menu);
@@ -134,6 +158,9 @@ public class PantallaPrincipal extends AppCompatActivity
             Configuracion config = new Configuracion();
             FragmentManager fragmentManager = this.getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_pantalla_principal,config).addToBackStack(null).commit();
+        }else if (id==R.id.busquedaGeneral){
+            System.out.println("kek");
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

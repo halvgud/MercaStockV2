@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Switch;
+
 import org.json.JSONObject;
 
 
@@ -38,13 +40,12 @@ public class ListaGeneral extends Fragment implements View.OnClickListener {
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(getActivity().SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
         MenuItem searchItem = menu.findItem(R.id.search);
+
         //SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
 
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-
-
             }
         });
 
@@ -52,7 +53,6 @@ public class ListaGeneral extends Fragment implements View.OnClickListener {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-
                 return false;
             }
 
@@ -65,20 +65,17 @@ public class ListaGeneral extends Fragment implements View.OnClickListener {
                     return true;
                 }
                 return false;
-
             }
         });
 
         MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                // Do something when collapsed
                 return true;  // Return true to collapse action view
             }
 
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                // Do something when expanded
                 return true;  // Return true to expand action view
             }
         });
@@ -92,24 +89,29 @@ public class ListaGeneral extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_lista_general, container, false);
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
         Bundle args = getArguments();
-        Boolean LISTA_ARTICULO = args.getBoolean("ARTICULO");
-        if(LISTA_ARTICULO){
+
+        int Transaccion = args.getInt("TRANSACCION_GENERAL",Constante.CATEGORIA);
+        if(Transaccion==Constante.ARTICULO){
             getActivity().setTitle("ARTICULO");
             DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
             cargarListadoArticulo(getActivity());
             PantallaPrincipal.BANDERA_FRAGMENTO=PantallaPrincipal.ARTICULO;
-            return rootView;
-        }else{
+        }else if(Transaccion==Constante.CATEGORIA){
             getActivity().setTitle("CATEGORIA");
             DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
             cargarListadoCategoria(getActivity());
             PantallaPrincipal.BANDERA_FRAGMENTO=PantallaPrincipal.LISTA_CATEGORIA;
-            return rootView;
+        }else if (Transaccion == Constante.GENERAL){
+            getActivity().setTitle("BUSQUEDA GENERAL");
+            DrawerLayout drawer = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+            drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+            ///TODO:
+            PantallaPrincipal.BANDERA_FRAGMENTO = PantallaPrincipal.LISTA_CATEGORIA;
         }
+        return rootView;
 
     }
     public static void cargarListadoCategoria(Activity act) {
@@ -118,7 +120,6 @@ public class ListaGeneral extends Fragment implements View.OnClickListener {
             JSONObject jsonObj1 = new JSONObject();
             bgt = new BGTCargarListadoGeneral(Constante.urlListaCategoria(),act,jsonObj1);
             bgt.execute();
-
         } catch (Exception e) {
             // throw e;
         }

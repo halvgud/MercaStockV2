@@ -94,6 +94,7 @@ public class Configuracion extends Fragment implements View.OnClickListener  {
                 editor.putString("NOMBRE_AMISTOSO", BGTCargarListaServidor.RUTA_REST);
                 editor.putString("RUTA_LOGIN", BGTCargarListaServidor.NOMBRE_AMISTOSO);
                 editor.putString("URL_REST",BGTCargarListaServidor.URL_REST);
+                editor.putString("ID_SUCURSAL",BGTCargarListaServidor.ID_SUCURSAL);
                 editor.putString("SERVIDOR_MERCATTO",txtIp.getText().toString());
                 editor.apply();
 
@@ -115,7 +116,7 @@ public class Configuracion extends Fragment implements View.OnClickListener  {
         try {
             JSONObject jsobj = new JSONObject();
             jsobj.put("nombreServidor",_servidorLAN);
-            bgt = new BGTCargarListaServidor("http://mercastock.mercatto.mx/API/public/sucursal/lista/conexion", getActivity(),jsobj);
+            bgt = new BGTCargarListaServidor(Constante.urlListaSucursalWeb(), getActivity(),jsobj);
             bgt.execute();
         } catch (Exception e) {
             e.printStackTrace();

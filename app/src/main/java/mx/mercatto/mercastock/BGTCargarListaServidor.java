@@ -109,7 +109,7 @@ public class BGTCargarListaServidor extends AsyncTask<String,String,JSONObject> 
     public static String NOMBRE_AMISTOSO ="";
     public static String RUTA_REST ="";
     public static String URL_REST="";
-
+    public static String ID_SUCURSAL="";
     Button guardar;
     Button probar;
 
@@ -130,15 +130,16 @@ public class BGTCargarListaServidor extends AsyncTask<String,String,JSONObject> 
                         String direccionIp = c.getString("direccionIp");
                         String nombreAmistoso = c.getString("nombreAmistoso");
                         String rutaRest = c.getString("rutaRest");
+                        String IdSucursal = c.getString("idSucursal");
                         map.put("nombreAmistoso", nombreAmistoso);
                         map.put("direccionIp",direccionIp);
                         map.put("rutaRest",rutaRest);
-                        _listaSucursal2.add(new ListaSucursal(nombreAmistoso,direccionIp,rutaRest));
+                        _listaSucursal2.add(new ListaSucursal(nombreAmistoso,direccionIp,rutaRest,IdSucursal));
                         _Listado.add(map);
                     }
 
                 } else {
-                    _listaSucursal2.add(new ListaSucursal("", "",""));
+                    _listaSucursal2.add(new ListaSucursal("", "","",""));
                 }
 
                 listaSucursal = (Spinner) _activity.findViewById(R.id.spinnerRegistroUsuario2);
@@ -164,6 +165,7 @@ public class BGTCargarListaServidor extends AsyncTask<String,String,JSONObject> 
                         RUTA_REST = selectedCountry.obtenerRutaRest();
                         DIRECCION_IP=selectedCountry.obtenerDireccionIp();
                         URL_REST=selectedCountry.obtenerRutaCompuesta();
+                        ID_SUCURSAL=selectedCountry.obtenerIdSucursal();
                     }
 
                     @Override

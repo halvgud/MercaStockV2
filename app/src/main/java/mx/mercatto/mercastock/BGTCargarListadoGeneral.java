@@ -65,7 +65,7 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
         _JsonGenerico = null;
         try {
             URL url=new URL(sURL);
-            HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+                HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
             httpCon.setUseCaches(false);
             httpCon.setRequestProperty("Content-Type", "application/json");
@@ -95,9 +95,7 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
         } catch (Exception e){
             bandera=false;
         }
-
         return jObj;
-
     }
 
     @Override
@@ -151,7 +149,8 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
                                               articulojson.get("cat_id").toString(),
                                               articulojson.get("granel").toString(),
                                               articulojson.get("Unidad").toString(),
-                                              articulojson.get("claveAlterna").toString()
+                                              articulojson.get("claveAlterna").toString(),
+                                              articulojson.get("existencia").toString()
                                                 ));
                     catId = articulojson.get("cat_id").toString();
                     contador++;
@@ -159,8 +158,8 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
                 _Listado.add(new Categoria(catId,contador+"",key,"",articulo));
             }
 
-
-            ListaGeneral.adapter = new ListaAdapter(_Listado,activity);
+            int transaccion=PantallaPrincipal.isChecked?ListaAdapter.TRANSACCION_GENERAL:ListaAdapter.TRANSACCION_CATEGORIA;
+            ListaGeneral.adapter = new ListaAdapter(_Listado,activity,transaccion);
 
             ListaGeneral.listView= (ListView) activity.findViewById(R.id.ListView1);
             ListaGeneral.listView.setAdapter(ListaGeneral.adapter);
@@ -189,6 +188,7 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
                         args.putString("IDINVENTARIO",_Listado.get(Posicion).obtenerListaArticulo().get(position).obtenerIdInventario());
                         args.putString("UNIDAD",_Listado.get(Posicion).obtenerListaArticulo().get(position).obtenerUnidad());
                         args.putString("GRANEL",_Listado.get(Posicion).obtenerListaArticulo().get(position).obtenerGranel());
+                        args.putString("EXISTENCIA",_Listado.get(Posicion).obtenerListaArticulo().get(position).obtenerExistencia());
                         fragment.setArguments(args);
                         //fragment.establecerCategoria(_Listado.get(position));
                         FragmentManager fragmentManager = activity.getFragmentManager();
@@ -203,6 +203,7 @@ public class BGTCargarListadoGeneral extends AsyncTask<String, String, JSONObjec
                         args.putString("IDINVENTARIO",_Listado.get(position).obtenerListaArticulo().get(0).obtenerIdInventario());
                         args.putString("UNIDAD",_Listado.get(position).obtenerListaArticulo().get(0).obtenerUnidad());
                         args.putString("GRANEL",_Listado.get(position).obtenerListaArticulo().get(0).obtenerGranel());
+                        args.putString("EXISTENCIA",_Listado.get(position).obtenerListaArticulo().get(0).obtenerExistencia());
                         fragment.setArguments(args);
                         //fragment.establecerCategoria(_Listado.get(position));
                         ListaGeneral.CAT_ID=_Listado.get(position).obtenerListaArticulo().get(0).obtenerCatId();

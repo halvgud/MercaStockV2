@@ -26,16 +26,32 @@ public class ListaAdapter extends BaseAdapter {
     ArrayList<Categoria> listaInicialTemporal;
     ArrayList<Articulo> listaSecundariaTemporal;
     public boolean bandera;
-    public ListaAdapter(List<Categoria> listaInicial, Activity context) {
-        this.listaInicial = listaInicial;
-        this.context = context;
-        listaInicialTemporal = new ArrayList<>();
-        listaInicialSecundariaTemporal = new ArrayList<>();
-        listaInicialTemporal.addAll(listaInicial);
-        int i = 0;
-        while (i < listaInicial.size()) {
-            listaInicialSecundariaTemporal.addAll(listaInicial.get(i).obtenerListaArticulo());
-            i++;
+    public static int TRANSACCION=0;
+    public static final int TRANSACCION_CATEGORIA=1;
+    public static final int TRANSACCION_GENERAL=2;
+    public ListaAdapter(List<Categoria> listaInicial, Activity context,int transaccion) {
+        switch(transaccion){
+            case TRANSACCION_CATEGORIA:
+                this.listaInicial = listaInicial.subList(0,listaInicial.size()-1);
+                this.context = context;
+                listaInicialTemporal = new ArrayList<>();
+                listaInicialSecundariaTemporal = new ArrayList<>();
+                listaInicialTemporal.addAll(this.listaInicial);
+                int i = 0;
+                while (i < listaInicial.size()-1) {
+                    listaInicialSecundariaTemporal.addAll(listaInicial.get(i).obtenerListaArticulo());
+                    i++;
+                }
+                break;
+            case TRANSACCION_GENERAL:
+                this.listaInicial = listaInicial.subList(0,listaInicial.size()-1);
+                this.context = context;
+                listaInicialTemporal = new ArrayList<>();
+                listaInicialSecundariaTemporal = new ArrayList<>();
+                listaInicialTemporal.addAll(this.listaInicial);
+                int j = listaInicial.size()-1;
+                listaInicialSecundariaTemporal.addAll(listaInicial.get(j).obtenerListaArticulo());
+                break;
         }
     }
     public ListaAdapter(List<Articulo> apps,Activity context,boolean bandera){
@@ -118,6 +134,39 @@ public class ListaAdapter extends BaseAdapter {
         }
            // listaCategoria = new ArrayList<>(new LinkedHashSet<>(listaCategoria));
         notifyDataSetChanged();
+        }catch(Exception e){
+            Log.d("",e.getMessage());
+        }
+    }
+
+    public void filtroBusquedaTotal(String charText){
+        try{
+            charText = charText.toLowerCase(Locale.getDefault());
+            listaInicial.clear();
+            if (charText.length() == 0) {
+                listaInicial.addAll(listaInicialTemporal);
+            } else {
+                for (Articulo postDetail : listaInicialSecundariaTemporal) {
+                    if (charText.length() != 0 && postDetail.obtenerClave().toLowerCase(Locale.getDefault()).contains(charText)) {
+                        ArrayList<Articulo> arr=new ArrayList<>();
+                        arr.add(postDetail);
+                        listaInicial.add(new Categoria(postDetail.obtenerCatId(),postDetail.obtenerClave(),postDetail.obtenerDescripcion(),"",arr));
+                    }else if(charText.length() != 0 && postDetail.obtenerDescripcion().toLowerCase(Locale.getDefault()).contains(charText)) {
+                        ArrayList<Articulo> arr=new ArrayList<>();
+                        arr.add(postDetail);
+                        listaInicial.add(new Categoria(postDetail.obtenerCatId(),postDetail.obtenerClave(),postDetail.obtenerDescripcion(),"",arr));
+                    }else if(charText.length()!=0 &&postDetail.obtenerClaveAlterna().toLowerCase(Locale.getDefault()).contains(charText)){
+                        ArrayList<Articulo> arr= new ArrayList<>();
+                        arr.add(postDetail);
+                        listaInicial.add(new Categoria(postDetail.obtenerCatId(),postDetail.obtenerClave(),postDetail.obtenerDescripcion(),"",arr));
+                    }
+                }
+                if(!listaInicial.isEmpty()){
+                    BGTCargarListadoGeneral.BANDERA_LISTA=BGTCargarListadoGeneral.BANDERA_BUSQUEDA;
+                }
+            }
+            // listaCategoria = new ArrayList<>(new LinkedHashSet<>(listaCategoria));
+            notifyDataSetChanged();
         }catch(Exception e){
             Log.d("",e.getMessage());
         }

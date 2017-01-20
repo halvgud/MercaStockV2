@@ -109,7 +109,6 @@ public class BGTCargarListaArticulo extends AsyncTask<String,String,JSONObject> 
             JSONArray jsonarray = file_url.getJSONArray("datos");
             for(int i =0;i<jsonarray.length();i++){
                 JSONObject articuloJson = jsonarray.getJSONObject(i);
-
                 _Listado.add(new Articulo(
                         articuloJson.get("idInventario").toString(),
                         articuloJson.get("art_id").toString(),
@@ -118,9 +117,11 @@ public class BGTCargarListaArticulo extends AsyncTask<String,String,JSONObject> 
                         articuloJson.get("cat_id").toString(),
                         articuloJson.get("granel").toString(),
                         articuloJson.get("Unidad").toString(),
-                        articuloJson.get("claveAlterna").toString()
+                        articuloJson.get("claveAlterna").toString(),
+                        articuloJson.get("existencia").toString()
                 ));
             }
+
             ListaGeneral.adapter = new ListaAdapter(_Listado,_activity,true);
             ListaGeneral.listView = (ListView) _activity.findViewById(R.id.ListView1);
             ListaGeneral.listView.setAdapter(ListaGeneral.adapter);
@@ -139,6 +140,7 @@ public class BGTCargarListaArticulo extends AsyncTask<String,String,JSONObject> 
                     args.putString("IDINVENTARIO",_Listado.get(position).obtenerIdInventario());
                     args.putString("UNIDAD",_Listado.get(position).obtenerUnidad());
                     args.putString("GRANEL",_Listado.get(position).obtenerGranel());
+                    args.putString("EXISTENCIA",_Listado.get(position).obtenerExistencia());
                     fragment.setArguments(args);
                     fragment.establecerCategoria(null);
                     _Listado.remove(_Listado.get(position));

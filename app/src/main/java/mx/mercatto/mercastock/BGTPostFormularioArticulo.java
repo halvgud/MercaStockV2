@@ -1,8 +1,12 @@
 package mx.mercatto.mercastock;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.OutputStream;
@@ -41,10 +45,9 @@ public class BGTPostFormularioArticulo extends AsyncTask<String, String, JSONObj
             asyncDialog.setIndeterminate(false);
             asyncDialog.setCancelable(false);
             asyncDialog.setProgress(0);
-            asyncDialog.setMessage("Cargando Usuario");
-
+            asyncDialog.setMessage("Guardando registro, favor de esperar");
+            asyncDialog.show();
         }
-
     }
 
     @Override
@@ -56,7 +59,7 @@ public class BGTPostFormularioArticulo extends AsyncTask<String, String, JSONObj
             conexionHttp.setUseCaches(false);
             conexionHttp.setRequestProperty("Content-Type","application/json");
             conexionHttp.setRequestProperty("Accept","application/json");
-            conexionHttp.setRequestProperty("Authorization","4eb34f33b936af2dc8d024da0c20fd6f");
+            conexionHttp.setRequestProperty("Auth","4eb34f33b936af2dc8d024da0c20fd6f");
             conexionHttp.setRequestMethod("POST");
             conexionHttp.connect();
             OutputStream os= conexionHttp.getOutputStream();
@@ -74,8 +77,8 @@ public class BGTPostFormularioArticulo extends AsyncTask<String, String, JSONObj
             _JsonGenerico=new JSONObject(sb.toString());
             BANDERA_RESULTADO=true;
         } catch (Exception e) {
-            bandera=false;
-            //  showToast(e.getMessage());
+
+              showToast(e.getMessage());
         }
         return _JsonGenerico;
 
@@ -85,10 +88,30 @@ public class BGTPostFormularioArticulo extends AsyncTask<String, String, JSONObj
     protected void onPostExecute(JSONObject file_url) {
         try {
             super.onPostExecute(file_url);
-            if(bandera) {
+            if(BANDERA_RESULTADO) {
+
                 switch (CodeResponse) {
                     case 200: {
                         showToast(file_url.getString("mensaje"));
+                        if(ListaGeneral.devolverConteo()>1){
+                            //getActivity().getFragmentManager().popBackStack();
+                            Bundle args = new Bundle();
+                            args.putInt("TRANSACCION_GENERAL",Constante.ARTICULO);
+                            ListaGeneral fragment = new ListaGeneral();
+                            fragment.setArguments(args);
+                            FragmentManager fragmentManager = activity.getFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.content_pantalla_principal, fragment).addToBackStack(null).commit();
+                        }
+                        else{
+                            Bundle args = new Bundle();
+                            args.putInt("TRANSACCION_GENERAL",Constante.CATEGORIA);
+                            ListaGeneral fragment2 = new ListaGeneral();
+                            fragment2.setArguments(args);
+                            FragmentManager fragmentManager = activity.getFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.content_pantalla_principal, fragment2);
+                            fragmentTransaction.commit();
+                        }
                     }
                     break;
                     default:
@@ -98,11 +121,11 @@ public class BGTPostFormularioArticulo extends AsyncTask<String, String, JSONObj
             }
             jObj=null;
         }catch(JSONException ignored){
-
+            Log.d("kek",ignored.getMessage());
         }
         finally{
             if(activity!=null){
-                asyncDialog.dismiss();
+                asyncDialog.dismiss();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     asyncDialog.dismiss();
             }
         }
     }

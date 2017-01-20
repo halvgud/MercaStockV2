@@ -35,10 +35,10 @@ public class PushNotificationService extends GcmListenerService {
             Sucursal = data.getString("descripcionSucursal");
             host=data.getString("host");
 
-            editor.putString("NOMBRE_AMISTOSO", Sucursal);
+           /* editor.putString("NOMBRE_AMISTOSO", Sucursal);
             editor.putString("URL_REST", host);
 
-            editor.apply();
+            editor.apply();*/
             /*try {
                     Xrray = new ArrayList<>();
                     JSONArray jar = new JSONArray(data.getString("data"));

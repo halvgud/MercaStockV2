@@ -10,7 +10,7 @@ public class Articulo {
     private String granel;
     private String unidad;
     private String claveAlterna;
-
+    private String existencia;
     public String obtenerDescripcion() {
         return descripcion;
     }
@@ -36,6 +36,9 @@ public class Articulo {
     public String obtenerIdInventario(){
         return idInventario;
     }
+    public String obtenerExistencia(){
+        return existencia;
+    }
 
     public Articulo(String idInventario,
                     String artId,
@@ -44,7 +47,8 @@ public class Articulo {
                     String catId,
                     String granel,
                     String unidad,
-                    String claveAlterna
+                    String claveAlterna,
+                    String existencia
                     ) {
         this.idInventario=idInventario;
         this.artId = artId;
@@ -54,5 +58,6 @@ public class Articulo {
         this.granel = granel;
         this.unidad=unidad;
         this.claveAlterna=claveAlterna;
+        this.existencia = existencia;
     }
 }

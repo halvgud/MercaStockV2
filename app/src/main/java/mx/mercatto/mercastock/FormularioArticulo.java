@@ -42,12 +42,14 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(false);
     }
 
     String NombreArticulo="";
     String Clave="";
     String ArtId="";
+    String Existencia="";
+
     InputMethodManager imm;
     String IdInventario="";
     @Override
@@ -59,6 +61,8 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
         IdInventario = args.getString(Constante.argumentoIdInventario(),"");
         ArtId= args.getString(Constante.argumentoArtId(),"");
         String esGranel = args.getString(Constante.argumentoGranel(),"");
+        Existencia = args.getString(Constante.argumentoExistencia(),"");
+
         EditText txt1 = (EditText) rootView.findViewById(R.id.editText3);
         TextView txtTituloInferior = (TextView) rootView.findViewById(R.id.FormularioArticulotxtTituloInferior);
         TextView txtCodigoDeBarras = (TextView) rootView.findViewById(R.id.FormularioArticulotxtCodigoDeBarras);
@@ -74,7 +78,6 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
         upButton.setOnClickListener(this);
 
         txt1.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void afterTextChanged(Editable s) {
                 EditText text = (EditText) rootView.findViewById(R.id.editText3);
@@ -98,8 +101,6 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
                 } else {
                     rootView.findViewById(R.id.button3).setEnabled(true);
                 }
-
-
             }
 
             @Override
@@ -181,6 +182,7 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
     @Override
     public void onClick(View v) {
         final EditText valor;
+
         valor = (EditText) getActivity().findViewById(R.id.editText3);
         AlertDialog.Builder dialogo1 = new AlertDialog.Builder(getActivity());
         dialogo1.setTitle(Html.fromHtml("<font color='#000'>Aviso</font>"));
@@ -208,36 +210,28 @@ public class FormularioArticulo extends Fragment  implements View.OnClickListene
     public void aceptar(String valor) {
         try{
             JSONObject jsobj = new JSONObject();
-            jsobj.put("idInventario",IdInventario);
-            jsobj.put("existenciaRespuesta",valor);
-            jsobj.put("idUsuario",Constante.obtenerIdUsuario());
-            jsobj.put("art_id",ArtId);
-            jsobj.put("claveApi2","");
-            BGTPostFormularioArticulo bgt = new BGTPostFormularioArticulo(Constante.urlArticuloActualizar(), getActivity(), jsobj);
-            bgt.execute();
+            if(!IdInventario.equals("0")){
+                jsobj.put("idInventario",IdInventario);
+                jsobj.put("existenciaRespuesta",valor);
+                jsobj.put("idUsuario",Constante.obtenerIdUsuario());
+                jsobj.put("art_id",ArtId);
+                jsobj.put("claveApi2","");
+                BGTPostFormularioArticulo bgt = new BGTPostFormularioArticulo(Constante.urlArticuloActualizar(), getActivity(), jsobj);
+                bgt.execute();
+            }else{
+                jsobj.put("idInventario",0);
+                jsobj.put("existenciaRespuesta",valor);
+                jsobj.put("idSucursal",Constante.obtenerIdSucursal());
+                jsobj.put("existenciaSolicitud",Existencia);
+                jsobj.put("existenciaEjecucion",Existencia);
+                jsobj.put("idUsuario",Constante.obtenerIdUsuario());
+                jsobj.put("art_id",ArtId);
+                BGTPostFormularioArticulo bgt = new BGTPostFormularioArticulo(/*Constante.urlInventarioCrearGeneral()*/Constante.urlArticuloInsertar(), getActivity(), jsobj);
+                bgt.execute();
+            }
+
         }catch(Exception e){
             showToast(e.getMessage());
-        }
-        finally {
-            if(ListaGeneral.devolverConteo()>1){
-                //getActivity().getFragmentManager().popBackStack();
-                Bundle args = new Bundle();
-                args.putBoolean("ARTICULO",true);
-                ListaGeneral fragment = new ListaGeneral();
-                fragment.setArguments(args);
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.content_pantalla_principal, fragment).addToBackStack(null).commit();
-            }
-            else{
-                Bundle args = new Bundle();
-                args.putBoolean("ARTICULO",false);
-                ListaGeneral fragment2 = new ListaGeneral();
-                fragment2.setArguments(args);
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_pantalla_principal, fragment2);
-                fragmentTransaction.commit();
-            }
         }
     }
     public void showToast(String msg) {

@@ -113,7 +113,8 @@ public class BGTLogIn extends AsyncTask<String,String,JSONObject> {
                     v.vibrate(350);
                     ListaGeneral fragment = new ListaGeneral();
                     Bundle args = new Bundle();
-                    args.putBoolean(Constante.argumentoArticulo(),false);
+                    //args.putBoolean(Constante.argumentoArticulo(),false);
+                    args.putInt("TRANSACCION_GENERAL",Constante.CATEGORIA);
                     fragment.setArguments(args);
                     FragmentManager fragmentManager = _activity.getFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.content_pantalla_principal,fragment).addToBackStack(null).commit();
@@ -123,7 +124,7 @@ public class BGTLogIn extends AsyncTask<String,String,JSONObject> {
                     break;
                 case Constante.NotFound:
                     showToast("algo a salido mal, favor de contactar a sistemas");
-                    break;
+                        break;
                 default:
                     showToast("algo a ocurrido mal, favor de contactar a sistemas");
             }
